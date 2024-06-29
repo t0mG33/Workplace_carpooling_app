@@ -1,0 +1,311 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Commute
+{% endblock %}
+
+{% block main %}
+
+    <h1 class="page-title">Here are your commute buddies, {{ user[0]['username'] }}!</h1>
+
+    <div class="row">
+        <div id="commute-organizer" class="col-12 mt-5">
+
+            <div class="day-column">
+                <h3>Monday</h3>
+
+                <ul class="buddy-list">
+                    {% for buddy in buddies %}
+
+                        {% if buddy['commute_days']['monday'] == 1 %}
+                            <li class="buddy-card">
+                                <p class="mb-3">
+                                    <span class="prop">User: </span>
+                                    <span>{{ buddy['username'] }}</span>
+                                </p>
+
+                                <p class="mb-3">
+                                    <span class="prop">Lives In: </span>
+                                    <span>{{ buddy['home_postCode'] }}</span>
+                                </p>
+
+                                <p>
+                                    <span class="prop">Works In: </span>
+                                    <span>{{ buddy['work_postCode'] }}</span>
+                                </p>
+
+                                <div class="row">
+                                    <p>
+                                        <span class="prop">Depart time: </span>
+                                        <span>{{ buddy['commute_times']['Out_travel'] }}</span>
+                                    </p>
+
+                                    <p>
+                                        <span class="prop">Return time: </span>
+                                        <span>{{ buddy['commute_times']['in_travel'] }}</span>
+                                    </p>
+                                </div>
+                            </li>
+                        {% endif %}
+
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+            <div class="day-column">
+                <h3>Tuesday</h3>
+
+                <ul class="buddy-list">
+                    {% for buddy in buddies %}
+
+                        {% if buddy['commute_days']['tuesday'] == 1 %}
+                            <li class="buddy-card">
+                                <p class="mb-3">
+                                    <span class="prop">User: </span>
+                                    <span>{{ buddy['username'] }}</span>
+                                </p>
+
+                                <p class="mb-3">
+                                    <span class="prop">Lives In: </span>
+                                    <span>{{ buddy['home_postCode'] }}</span>
+                                </p>
+
+                                <p>
+                                    <span class="prop">Works In: </span>
+                                    <span>{{ buddy['work_postCode'] }}</span>
+                                </p>
+
+                                <div class="row">
+                                    <p>
+                                        <span class="prop">Depart time: </span>
+                                        <span>{{ buddy['commute_times']['Out_travel'] }}</span>
+                                    </p>
+
+                                    <p>
+                                        <span class="prop">Return time: </span>
+                                        <span>{{ buddy['commute_times']['in_travel'] }}</span>
+                                    </p>
+                                </div>
+                            </li>
+                        {% endif %}
+
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+            <div class="day-column">
+                <h3>Wednesday</h3>
+
+                <ul class="buddy-list">
+                    {% for buddy in buddies %}
+
+                        {% if buddy['commute_days']['wednesday'] == 1 %}
+                            <li class="buddy-card">
+                                <p class="mb-3">
+                                    <span class="prop">User: </span>
+                                    <span>{{ buddy['username'] }}</span>
+                                </p>
+
+                                <p class="mb-3">
+                                    <span class="prop">Lives In: </span>
+                                    <span>{{ buddy['home_postCode'] }}</span>
+                                </p>
+
+                                <p>
+                                    <span class="prop">Works In: </span>
+                                    <span>{{ buddy['work_postCode'] }}</span>
+                                </p>
+
+                                <div class="row">
+                                    <p>
+                                        <span class="prop">Depart time: </span>
+                                        <span>{{ buddy['commute_times']['Out_travel'] }}</span>
+                                    </p>
+
+                                    <p>
+                                        <span class="prop">Return time: </span>
+                                        <span>{{ buddy['commute_times']['in_travel'] }}</span>
+                                    </p>
+                                </div>
+                            </li>
+                        {% endif %}
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="day-column">
+                <h3>Thursday</h3>
+
+                <ul class="buddy-list">
+                    {% for buddy in buddies %}
+
+                        {% if buddy['commute_days']['thursday'] == 1 %}
+                            <li class="buddy-card">
+                                <p class="mb-3">
+                                    <span class="prop">User: </span>
+                                    <span>{{ buddy['username'] }}</span>
+                                </p>
+
+                                <p class="mb-3">
+                                    <span class="prop">Lives In: </span>
+                                    <span>{{ buddy['home_postCode'] }}</span>
+                                </p>
+
+                                <p>
+                                    <span class="prop">Works In: </span>
+                                    <span>{{ buddy['work_postCode'] }}</span>
+                                </p>
+
+                                <div class="row">
+                                    <p>
+                                        <span class="prop">Depart time: </span>
+                                        <span>{{ buddy['commute_times']['Out_travel'] }}</span>
+                                    </p>
+
+                                    <p>
+                                        <span class="prop">Return time: </span>
+                                        <span>{{ buddy['commute_times']['in_travel'] }}</span>
+                                    </p>
+                                </div>
+                            </li>
+                        {% endif %}
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="day-column">
+                <h3>Friday</h3>
+
+                <ul class="buddy-list">
+                    {% for buddy in buddies %}
+
+                        {% if buddy['commute_days']['friday'] == 1 %}
+                            <li class="buddy-card">
+                                <p class="mb-3">
+                                    <span class="prop">User: </span>
+                                    <span>{{ buddy['username'] }}</span>
+                                </p>
+
+                                <p class="mb-3">
+                                    <span class="prop">Lives In: </span>
+                                    <span>{{ buddy['home_postCode'] }}</span>
+                                </p>
+
+                                <p class="mb-3">
+                                    <span class="prop">Works In: </span>
+                                    <span>{{ buddy['work_postCode'] }}</span>
+                                </p>
+
+                                <p>
+                                    <span class="prop">Leave In: </span>
+                                    <span>{{ buddy['work_postCode'] }}</span>
+                                </p>
+
+                                <div class="row">
+                                    <p>
+                                        <span class="prop">Depart time: </span>
+                                        <span>{{ buddy['commute_times']['Out_travel'] }}</span>
+                                    </p>
+
+                                    <p>
+                                        <span class="prop">Return time: </span>
+                                        <span>{{ buddy['commute_times']['in_travel'] }}</span>
+                                    </p>
+                                </div>
+                            </li>
+                        {% endif %}
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="day-column">
+                <h3>Saturday</h3>
+
+                <ul class="buddy-list">
+                    {% for buddy in buddies %}
+
+                        {% if buddy['commute_days']['saturday'] == 1 %}
+                            <li class="buddy-card">
+                                <p class="mb-3">
+                                    <span class="prop">User: </span>
+                                    <span>{{ buddy['username'] }}</span>
+                                </p>
+
+                                <p class="mb-3">
+                                    <span class="prop">Lives In: </span>
+                                    <span>{{ buddy['home_postCode'] }}</span>
+                                </p>
+
+                                <p>
+                                    <span class="prop">Works In: </span>
+                                    <span>{{ buddy['work_postCode'] }}</span>
+                                </p>
+
+                                <div class="row">
+                                    <p>
+                                        <span class="prop">Depart time: </span>
+                                        <span>{{ buddy['commute_times']['Out_travel'] }}</span>
+                                    </p>
+
+                                    <p>
+                                        <span class="prop">Return time: </span>
+                                        <span>{{ buddy['commute_times']['in_travel'] }}</span>
+                                    </p>
+                                </div>
+                            </li>
+                        {% endif %}
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="day-column">
+                <h3>Sunday</h3>
+
+                <ul class="buddy-list">
+                    {% for buddy in buddies %}
+
+                        {% if buddy['commute_days']['sunday'] == 1 %}
+                            <li class="buddy-card">
+                                <p class="mb-3">
+                                    <span class="prop">User: </span>
+                                    <span>{{ buddy['username'] }}</span>
+                                </p>
+
+                                <p class="mb-3">
+                                    <span class="prop">Lives In: </span>
+                                    <span>{{ buddy['home_postCode'] }}</span>
+                                </p>
+
+                                <p>
+                                    <span class="prop">Works In: </span>
+                                    <span>{{ buddy['work_postCode'] }}</span>
+                                </p>
+
+                                <div class="row">
+                                    <p>
+                                        <span class="prop">Depart time: </span>
+                                        <span>{{ buddy['commute_times']['Out_travel'] }}</span>
+                                    </p>
+
+                                    <p>
+                                        <span class="prop">Return time: </span>
+                                        <span>{{ buddy['commute_times']['in_travel'] }}</span>
+                                    </p>
+                                </div>
+                            </li>
+                        {% endif %}
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

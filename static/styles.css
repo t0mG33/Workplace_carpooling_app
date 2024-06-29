@@ -1,0 +1,151 @@
+.navbar-light  .navbar-brand {
+    color: green
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+.auth-form {
+    width: 300px;
+    margin: auto;
+}
+
+.buddy-list {
+    padding-left: 0;
+}
+
+.buddy-card {
+    list-style-type: none;
+    background-color: #fff;
+    border-radius: 6px;
+    text-align: left;
+    padding: 10px;
+    width: 95%;
+    margin: 7px auto
+}
+
+.buddy-card p {
+    display: inline-block;
+    width: 48%
+}
+
+.buddy-card p .prop {
+    font-weight: 800;
+    color: #6290c3;
+}
+
+#user-profile {
+    width: 100%;
+    margin: 2rem auto;
+    border: 1px solid #eee;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 16px;
+}
+
+#user-profile {
+    text-align: left;
+}
+
+#user-profile .form-group {
+    display: table-row;
+    position: relative;
+    width: inherit;
+    height: 40px;
+}
+
+#user-profile .col-md-6 {
+    display: table;
+}
+
+#user-profile fieldset legend {
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+#user-profile fieldset .input-group {
+    display: inline-block;
+    width: auto;
+    max-width: 130px;
+    margin: 0 7px;
+}
+
+#user-profile fieldset.commuting-time-selector .input-group {
+    max-width: 50%;
+}
+
+#user-profile .form-group input {
+    display: table-cell;
+    width: inherit;
+    height: 40px;
+}
+
+#user-profile .form-group input.usr-profile-input {
+    width: 100%
+}
+
+#user-profile fieldset .input-group input {
+    height: auto
+}
+
+#user-profile fieldset .input-group label {
+    display: inline-block;
+    width: auto;
+    font-weight: 400;
+}
+
+#user-profile .form-group .btn {
+    display: table-cell;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+}
+
+#user-profile .form-group label {
+    font-weight: 800;
+    width: 200px;
+}
+
+#user-profile .form-group p {
+    height: inherit;
+}
+
+#user-profile .form-group label,
+#user-profile .form-group p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#usr-profile-save-btn {
+    margin: 1rem auto;
+    display: block;
+}
+
+#home-pc-container,
+#work-pc-container {
+    display: table-cell;
+    width: 60px;
+    vertical-align: middle;
+}
+
+#commute-organizer {
+    display: flex;
+    overflow: scroll;
+    min-height: 300px;
+}
+
+#commute-organizer .day-column {
+    flex: 1;
+    min-width: 320px;
+    background-color: #eee;
+    margin: 0 7px 0;
+}
+
+#commute-organizer .day-column h3 {
+    background-color: #01200f;
+    color: #f1dede;
+    text-align: left;
+    padding: 7px 15px 7px;
+}

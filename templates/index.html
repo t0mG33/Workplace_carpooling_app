@@ -1,0 +1,253 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+    <h1 class="page-title">Hello, {{ user[0]['username'] }}!</h1>
+
+    <form action="/profile" method="post" id="user-profile" class="profile-form">
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="mb-3 form-group">
+                    <label>Your home post code is: </label>
+
+                    <div id="home-pc-container">
+                        {% if user[0]['home_postCode'] != None %}
+                            <p class="mb-0 js-from-usr-db">{{ user[0]['home_postCode'] }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div id="upd-homePc" class="btn btn-primary js-update-db">Update</div>
+
+                </div>
+                <div class="mb-3 form-group">
+                    <label>Your workplace post code is: </label>
+
+                    <div id="work-pc-container">
+                        {% if user[0]['work_postCode'] != None %}
+                            <p class="mb-0 js-from-usr-db">{{ user[0]['work_postCode'] }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div id="upd-workPc" class="btn btn-primary js-update-db">Update</div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <fieldset id="commuting-days-select">
+                        <legend>Your commuting days:</legend>
+                        <div class="input-group">
+                            {% if commute_days and commute_days[0]['monday'] == 1 %}
+                                <input type="checkbox" id="monday" value="monday". checked>
+                            {% else %}
+                                <input type="checkbox" id="monday" value="monday">
+                            {% endif %}
+                            <label for="monday">Monday</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_days and commute_days[0]['tuesday'] == 1 %}
+                                <input type="checkbox" id="tuesday" value="tuesday" checked>
+                            {% else %}
+                                <input type="checkbox" id="tuesday" value="tuesday">
+                            {% endif %}
+                            <label for="tuesday">Tuesday</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_days and commute_days[0]['wednesday'] == 1 %}
+                                <input type="checkbox" id="wednesday" value="wednesday" checked>
+                            {% else %}
+                                <input type="checkbox" id="wednesday" value="wednesday">
+                            {% endif %}
+                            <label for="wednesday">Wednesday</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_days and commute_days[0]['thursday'] == 1 %}
+                                <input type="checkbox" id="thursday" value="thursday" checked>
+                            {% else %}
+                                <input type="checkbox" id="thursday" value="thursday">
+                            {% endif %}
+                            <label for="thursday">Thursday</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_days and commute_days[0]['friday'] == 1 %}
+                                <input type="checkbox" id="friday" value="friday" checked>
+                            {% else %}
+                                <input type="checkbox" id="friday" value="friday">
+                            {% endif %}
+                            <label for="friday">Friday</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_days and commute_days[0]['saturday'] == 1 %}
+                                <input type="checkbox" id="saturday" value="saturday" checked>
+                            {% else %}
+                                <input type="checkbox" id="saturday" value="saturday">
+                            {% endif %}
+                            <label for="saturday">Saturday</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_days and commute_days[0]['saturday'] == 1 %}
+                                <input type="checkbox" id="sunday" value="sunday" checked>
+                            {% else %}
+                                <input type="checkbox" id="sunday" value="sunday">
+                            {% endif %}
+                            <label for="sunday">Sunday</label>
+                        </div>
+
+                      </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <fieldset id="DepartTimeSelect" class="commuting-time-selector">
+
+                        <legend>Your outbound travel time:</legend>
+
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['Out_travel'] == "600_630AM" %}
+                                <input type="radio" id="in_timeslot1" name="in_timeslot1" value="600_630AM" checked>
+                            {% else %}
+                                <input type="radio" id="in_timeslot1" name="in_timeslot1" value="600_630AM">
+                            {% endif %}
+                            <label for="in_timeslot1">6:00AM to 6:30AM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['Out_travel'] == "630_700AM" %}
+                                <input type="radio" id="in_timeslot2" name="in_timeslot2" value="630_700AM" checked>
+                            {% else %}
+                                <input type="radio" id="in_timeslot2" name="in_timeslot2" value="630_700AM">
+                            {% endif %}
+                            <label for="in_timeslot2">6:30AM to 7:00AM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['Out_travel'] == "700_730AM" %}
+                                <input type="radio" id="in_timeslot3" name="in_timeslot3" value="700_730AM" checked>
+                            {% else %}
+                                <input type="radio" id="in_timeslot3" name="in_timeslot3" value="700_730AM">
+                            {% endif %}
+                            <label for="in_timeslot3">7:00AM to 7:30AM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['Out_travel'] == "730_800AM" %}
+                                <input type="radio" id="in_timeslot4" name="in_timeslot4" value="730_800AM" checked>
+                            {% else %}
+                                <input type="radio" id="in_timeslot4" name="in_timeslot4" value="730_800AM">
+                            {% endif %}
+                            <label for="in_timeslot4">7:30AM to 8:00AM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['Out_travel'] == "800_830AM" %}
+                                <input type="radio" id="in_timeslot5" name="in_timeslot5" value="800_830AM" checked>
+                            {% else %}
+                                <input type="radio" id="in_timeslot5" name="in_timeslot5" value="800_830AM">
+                            {% endif %}
+                            <label for="in_timeslot5">8:00AM to 8:30AM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['Out_travel'] == "830_900AM" %}
+                                <input type="radio" id="in_timeslot6" name="in_timeslot6" value="830_900AM" checked>
+                            {% else %}
+                                <input type="radio" id="in_timeslot6" name="in_timeslot6" value="830_900AM">
+                            {% endif %}
+                            <label for="in_timeslot6">8:30AM to 9:00AM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['Out_travel'] == "900_930AM" %}
+                                <input type="radio" id="in_timeslot7" name="in_timeslot7" value="900_930AM" checked>
+                            {% else %}
+                                <input type="radio" id="in_timeslot7" name="in_timeslot7" value="900_930AM">
+                            {% endif %}
+                            <label for="in_timeslot7">9:00AM to 9:30AM</label>
+                        </div>
+
+                      </fieldset>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <fieldset id="returnTimeSelect" class="commuting-time-selector">
+
+                        <legend>Your inbound travel time:</legend>
+
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['in_travel'] == "300_330PM" %}
+                                <input type="radio" id="out_timeslot1" name="out_timeslot1" value="300_330PM" checked>
+                            {% else %}
+                                <input type="radio" id="out_timeslot1" name="out_timeslot1" value="300_330PM">
+                            {% endif %}
+                            <label for="out_timeslot1">3:00PM to 3:30PM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['in_travel'] == "330_400PM" %}
+                                <input type="radio" id="out_timeslot2" name="out_timeslot2" value="330_400PM" checked>
+                            {% else %}
+                                <input type="radio" id="out_timeslot2" name="out_timeslot2" value="330_400PM">
+                            {% endif %}
+                            <label for="out_timeslot2">3:30PM to 4:00PM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['in_travel'] == "400_430PM" %}
+                                <input type="radio" id="out_timeslot3" name="out_timeslot3" value="400_430PM" checked>
+                            {% else %}
+                                <input type="radio" id="out_timeslot3" name="out_timeslot3" value="400_430PM">
+                            {% endif %}
+                            <label for="out_timeslot3">4:00PM to 4:30PM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['in_travel'] == "430_500PM" %}
+                                <input type="radio" id="out_timeslot4" name="out_timeslot4" value="430_500PM" checked>
+                            {% else %}
+                                <input type="radio" id="out_timeslot4" name="out_timeslot4" value="430_500PM">
+                            {% endif %}
+                            <label for="out_timeslot4">4:30PM to 5:00PM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['in_travel'] == "500_530PM" %}
+                                <input type="radio" id="out_timeslot5" name="out_timeslot5" value="500_530PM" checked>
+                            {% else %}
+                                <input type="radio" id="out_timeslot5" name="out_timeslot5" value="500_530PM">
+                            {% endif %}
+                            <label for="out_timeslot5">5:00PM to 5:30PM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['in_travel'] == "530_600PM" %}
+                                <input type="radio" id="out_timeslot6" name="out_timeslot6" value="530_600PM" checked>
+                            {% else %}
+                                <input type="radio" id="out_timeslot6" name="out_timeslot6" value="530_600PM">
+                            {% endif %}
+                            <label for="out_timeslot6">5:30PM to 6:00PM</label>
+                        </div>
+                        <div class="input-group">
+                            {% if commute_times and commute_times[0]['in_travel'] == "600_630PM" %}
+                                <input type="radio" id="out_timeslot7" name="out_timeslot7" value=600_630PM" checked>
+                            {% else %}
+                                <input type="radio" id="out_timeslot7" name="out_timeslot7" value=600_630PM">
+                            {% endif %}
+                            <label for="out_timeslot7">6:00PM to 6:30PM</label>
+                        </div>
+
+                      </fieldset>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <button id="usr_profile_btn" class="btn btn-success d-block mx-auto" type="submit">Save</button>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}
